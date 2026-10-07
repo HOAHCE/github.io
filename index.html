@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<h1 class="page-heading">Bài viết</h1>
+
+<ul class="post-list">
+  {%- for post in site.posts %}
+  <li>
+    <p class="post-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d/%m/%Y' }}</time>
+    </p>
+    <h2 class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="post-excerpt">{{ post.excerpt | strip_html | strip }}</p>
+  </li>
+  {%- endfor %}
+</ul>
